@@ -4,55 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <title>Kalkulator BMI</title>
     <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+    <script src="js\script.js"></script>
+</head>
+
 <body>
-    <header>
-        <h1 class="main-title">Kalkulator BMI</h1>
-    </header>
 
-    <main>
-        <aside>
-            <article>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </article>
-    
-            <form>
-                <div>
-                    <h3>Jenis Kelamin</h3>
-                    <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki"><label for="laki-laki">Laki-laki</label>
-                    <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan"><label for="perempuan">Perempuan</label>
-                </div>
-    
-                <div>
-                    <h3>Berat Badan</h3>
-                    <input type="number">
-                </div>
-    
-                <div class="form-btn-container">
-                    <button class="button bg-green">Hitung BMI</button>
-                    <button class="button bg-reset">Reset</button>
-                </div>
-            </form>
-    
-            <article>
-                <header>
-                    <h2>Form Information</h2>
-                </header>
-    
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </article>
-    
-        </aside>
-        <aside>
-            <section>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
-        </aside>
-    </main>
-
-    <footer>
-        <p>Made By Dyas</p>
-    </footer>
 </body>
+    <div class="container">
+        <div class="input-section">
+            <h1>Kalkulator BMI</h1>
+            <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menadakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p> 
+                <div class="input-container"> 
+                    <h3>Jenis kelamin</h3>
+                    <input type="radio" id="pria" name="gender" value="pria" checked>
+                    <label for="pria">Pria</label>
+                    <input type="radio" id="wanita" name="gender" value="wanita">
+                    <label for="wanita">Wanita</label>
+
+                    <h3 class="">Berat badan (kg)</h3>
+                    <input type="number" id="weight" min="1" step="0.1" placeholder="Kilogram">
+
+                    <h3>Usia (tahun)</h3>
+                    <input type="number" id="age" min="1" placeholder="Tahun">
+
+                    <h3>Tinggi badan (cm)</h3>
+                    <input type="number" id="height" min="1" placeholder="Centimeter">
+
+
+                    <button onclick="calculateBMI()" class="calculate">Hitung BMI</button>
+                    <button onclick="resetForm()" class="reset">Reset</button>
+                </div>
+
+                    <h2>Keunggulan fitur</h2>
+                    <ol>
+                        <li>Menghitung berat badan</li>
+                        <li>Menentukan kategori berat badan ideal atau tidak</li>
+                        <li>Mempersiapkan program penurunan berat badan</li>
+                    </ol>
+
+                    <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh menggunakan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.</p>
+
+                    <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh atau BMI dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = kg/M2.</p>
+                </div>
+
+                <div class="result-section">
+                    <h2>Hasil</h2>
+                    <div id="result" class="result">
+                        <h3>Berat badan <span id="category"></span></h3>
+                        <h1 id="bmi-result"></h1>
+                        <p id="bmi-description"></p>
+                        <button onclick="downloadResult()" class="download">Download Hasil BMI</button>
+                    </div>
+                    
+                    <div>
+                        <p>
+                            Hasil BMI diantara 23 dan 25
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p>
+                        <br>Anda berada dalam kategori overweight atau berat badan berlebih
+                        <br>Cara terbaik untuk menurunkan berat badan adalah dengan mengatur kalor makanan yang di konsumsi dan berolahraga
+                        <br>Jika BMI Anda berada dalam kategori ini maka Anda dianjurkan untuk menurunkan berat badan hingga batas normal
+                        </p>
+                    </div>
+
+                    <div class="diseases">
+                        <button onclick="consultNutrition()" class="consult">Konsultasi Ahli Gizi Via Aplikasi</button>
+                        <button onclick="registerOnline()" class="regist">Registrasi Online Ahli Gizi</button>
+                        <p>
+                            BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.
+                        </p>
+                    </div>
+
+    
+                    <div class="input-container-information">
+                        <p class="Akibat"><b>Beberapa penyakit yang berasal dari kegemukan</b></p>
+                        <p><b><i>Diabetes</i></b></p>
+                        <p><b><i>Hipertensi</i></b></p>
+                        <p><b><i>Sakit Jantung</i></b></bol></p>
+                        <p><b><i>Osteoarthritis</i></b></p>
+                    
+                        <button id="btn-konsul2" type="button">Konsultasi Dokter Via Aplikasi</button>
+                        <button id="btn-reg2" type="button">Registrasi Online Sekarang</button>
+                    </div>
+                    
+                    <footer>
+                        <p>Download Aplikasi</p>
+                        <img src="pp.png" alt="googleplay">
+                    </footer>
+
+                    <footer>
+                        <p>Made By @Dyas</p>
+                    </footer>
+                    </div>
+                </div>
+
+    </body>
 </html>

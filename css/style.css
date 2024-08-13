@@ -1,55 +1,212 @@
 /* ini css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.main-title {
-    text-align: center;
+body {
+    font-family: "Poppins", sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: rgb(246, 246, 247);
+    box-sizing: border-box;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
-main {
+h1 {
+    color: #fff;
+}
+
+h2 {
+    color: #fff;
+}
+
+li {
+    color: #fff;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+.result h3 {
+    transform: translateY(-40%);
+    transform: translateX(33%);
+}
+
+.result h1 {
+    transform: translateX(44%);
+}
+
+th, td {
+    padding: 4px 15px;
+}
+
+.container {
     display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    background-color: rgb(7, 55, 160);
+    border-radius: 30px;
+    margin: 0px 50px 0px 50px;
+    margin-top: 20px;
 }
 
-form {
-    padding: 12px;
-    background-color: aliceblue;
+.input-container {
+    padding: 15px;
+    background-color: rgb(24, 150, 73);
+    font-size: 14px;
     border-radius: 20px;
 }
 
-aside {
-    padding: 40px;
+.input-section, .result-section {
+    width: 48%;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.button {
-    height: 32px;
-    border: none;
-    border-radius: 4px;
+.input-section li {
+    transform: translateX(-3.5%);
 }
 
-.form-btn-container {
-    margin-top: 24px;
-    margin-bottom: 16px;
-}
-
-.bg-green {
-    background-color: rgb(19, 196, 107);
-}
-
-.bg-reset {
-    background-color: red;
-    color: white;
-}
-
-​input[type=number] {
+input[type=number] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 8px 12px;
+    margin: 5px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #eee9e9;
+    border-radius: 10px;
     box-sizing: border-box;
-    font-family: monospace;
-    font-size: 14px;
-  }
+}
 
-  footer {
+.download {
+    height: 30px;
+    background:#fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 13px;
+    color: black;
+    font-weight: 600;
+    display: block;
+    margin: 0 auto;
+}
+
+.calculate, .reset {
+    height: 30px;
+    background: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 13px;
+    color: black;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+}
+
+
+.reset, .regist {
+    background-color: #fff;
+}
+
+.result {
+    background-color: rgb(33, 177, 88);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.diseases {
+    margin-top: 20px;
+}
+
+.consult {
+    height: 30px;
+    background: #2d62cb;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(132, 182, 184, 0.2);
+    cursor: pointer;
+    font-size: 13px;
+    color: rgb(247, 246, 246);
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.regist {
+    height: 30px;
+    background: #2d6dcb;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 5px rgba(245, 245, 245, 0.2);
+    cursor: pointer;
+    font-size: 13px;
+    color: rgb(249, 249, 249);
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+p {
+    color: #fff;
+}
+
+/* CSS untuk input-container-information */
+.input-container-information {
     text-align: center;
-  }
+    background-color: rgb(33, 177, 88);
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+    padding: 20px 30px;
+    margin-top: 20px;
+}
+
+.input-container-information p {
+    color: #333; /* Warna teks yang lebih gelap untuk kontras */
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.input-container-information .Akibat {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.input-container-information button {
+    height: 30px;
+    background: #2d62cb;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 5px 20px;
+}
+
+.input-container-information #btn-reg2 {
+    background: #2d6dcb;
+}
+
+.input-container-information button:hover {
+    background: #1b4ea0; /* Warna latar belakang saat tombol di-hover */
+}
+
+b {
+    color: #000000;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+img {
+    mix-blend-mode: multiply;
+}
